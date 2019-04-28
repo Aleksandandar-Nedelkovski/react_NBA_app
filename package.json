@@ -10,6 +10,7 @@
     "@svgr/webpack": "4.1.0",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
+    "axios": "^0.18.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.7.1",
     "babel-loader": "8.0.5",
@@ -64,6 +65,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "database": "json-server --watch db.json --port 3004",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
