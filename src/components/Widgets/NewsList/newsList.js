@@ -31,12 +31,12 @@ class NewsList extends Component {
                     })
                 })
         }
-
-
         axios.get(`${URL}/articles?_start=${start}&_end=${end}`)
             .then(response => {
                 this.setState({
-                    items: [...this.state.items, ...response.data]
+                    items: [...this.state.items, ...response.data],
+                    start,
+                    end
                 })
             })
     }
@@ -64,7 +64,7 @@ class NewsList extends Component {
                         <div>
                             <div className={style.newslist_item}>
                                 <Link to={`/articles/${item.id}`}>
-                                    <CardInfo 
+                                    <CardInfo
                                         teams={this.state.teams}
                                         team={item.team}
                                         date={item.date}

@@ -4,18 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './cardInfo.css';
 
 const CardInfo = (props) => {
-    
     const teamName = (teams, team) => {
-        let data = teams.find((item)=>{
+        let data = teams.find((item) => {
             return item.id === team
         });
-        if(data) {
+        if (data) {
             return data.name
         }
     }
-    
-    
-    return(
+    return (
         <div className={styles.cardInfo}>
             <span className={styles.teamName}>
                 {teamName(props.teams, props.team)}
