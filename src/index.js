@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars, faHome, faPlay, faSignInAlt, faSignOutAlt, faNewspaper } from '@fortawesome/free-solid-svg-icons'
-library.add(faBars, faHome, faPlay, faSignInAlt, faSignOutAlt, faNewspaper)
+import { faBars, faHome, faPlay, faSignInAlt, faSignOutAlt, faNewspaper, faClock } from '@fortawesome/free-solid-svg-icons'
+library.add(faBars, faHome, faPlay, faSignInAlt, faSignOutAlt, faNewspaper, faClock)
 
 
 const App = () => {
