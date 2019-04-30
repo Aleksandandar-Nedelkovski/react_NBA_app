@@ -31,7 +31,6 @@ class VideoArticle extends Component {
     }
 
     getRelated = () => {
-        console.log(this.state)
         axios.get(`${URL}/teams`)
             .then(response => {
                 let teams = response.data
