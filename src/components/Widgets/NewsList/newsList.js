@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { URL } from '../../../config';
-import style from './newsList.css';
+import styles from './newsList.css';
 
 import Button from '../Buttons/buttons';
 import CardInfo from '../CardInfo/cardinfo';
@@ -55,14 +55,14 @@ class NewsList extends Component {
                 template = this.state.items.map((item, i) => (
                     <CSSTransition
                         classNames={{
-                            enter: style.newslist_wrapper,
-                            enterActive: style.newslist_wrapper_enter
+                            enter: styles.newslist_wrapper,
+                            enterActive: styles.newslist_wrapper_enter
                         }}
                         timeout={500}
                         key={i}
                     >
                         <div>
-                            <div className={style.newslist_item}>
+                            <div className={styles.newslist_item}>
                                 <Link to={`/articles/${item.id}`}>
                                     <CardInfo
                                         teams={this.state.teams}
@@ -73,6 +73,37 @@ class NewsList extends Component {
                                 </Link>
                             </div>
                         </div>
+                    </CSSTransition>
+                ))
+                break;
+            case ('cardMain'):
+                template = this.state.items.map((item, i) => (
+                    <CSSTransition
+                        classNames={{
+                            enter: styles.newslist_wrapper,
+                            enterActive: styles.newslist_wrapper_enter
+                        }}
+                        timeout={500}
+                        key={i}
+                    >
+                        <Link to={`/articles/${item.id}`}>
+                            <div className={styles.flex_wrapper}>
+                                <div className={styles.left}
+                                    style={{
+                                        background: `url('/images/articles/${item.image}')`
+                                    }}>
+                                    <div></div>
+                                </div>
+                                <div className={styles.right}>
+                                    <CardInfo
+                                        teams={this.state.teams}
+                                        team={item.team}
+                                        date={item.date}
+                                    />
+                                    <h2>{item.title}</h2>
+                                </div>
+                            </div>
+                        </Link>
                     </CSSTransition>
                 ))
                 break;

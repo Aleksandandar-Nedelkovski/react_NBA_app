@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { URL } from '../../../config';
 import Button from '../Buttons/buttons';
-import VideosListTemplate from './videosListTemplate';
+import VideosTemplate from './videosListTemplate';
 
 class VideosList extends Component {
     state = {
@@ -42,7 +42,7 @@ class VideosList extends Component {
         let template = null;
         switch (this.props.type) {
             case ('card'):
-                template = <VideosListTemplate
+                template = <VideosTemplate
                     data={this.state.videos}
                     teams={this.state.teams} />
                 break;

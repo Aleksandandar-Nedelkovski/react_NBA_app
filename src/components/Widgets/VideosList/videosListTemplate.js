@@ -14,7 +14,7 @@ const VideosListTemplate = (props) => {
                         background: `url(/images/videos/${item.image})`
                     }}
                 >
-                    <div></div>
+                <div></div>
                 </div>
                 <div className={styles.right}>
                     <CardInfo
