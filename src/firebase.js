@@ -30,6 +30,7 @@ const firebaseLooper = (snapshot) => {
 
 export {
     firebase,
+    firebaseDB,
     firebaseArticles,
     firebaseTeams,
     firebaseVideos,
