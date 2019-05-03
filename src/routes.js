@@ -9,22 +9,23 @@ import Videoarticle from './components/Articles/Videos/Video/index';
 import NewsMain from './components/Articles/News/Main/index';
 import VideosMain from './components/Articles/Videos/Main/index'
 import SignIn from './components/SignIn/signIn';
+import Dashboard from './components/Dashboard/dashboard';
 
-class Routes extends Component {
-    render() {
-        return (
-            <Layout>
-                <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/news" exact component={NewsMain} />
-                    <Route path="/articles/:id" exact component={NewsArticle} />
-                    <Route path="/videos/:id" exact component={Videoarticle} />
-                    <Route path="/videos" exact component={VideosMain} />
-                    <Route path="/sign-in" exact component={SignIn} />
-                </Switch>
-            </Layout>
-        )
-    }
+const Routes = (props) => {
+    return (
+        <Layout user={props.user}>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/news" exact component={NewsMain} />
+                <Route path="/articles/:id" exact component={NewsArticle} />
+                <Route path="/videos/:id" exact component={Videoarticle} />
+                <Route path="/videos" exact component={VideosMain} />
+                <Route path="/sign-in" exact component={SignIn} />
+                <Route path="/dashboard" exact component={Dashboard} />
+            </Switch>
+        </Layout>
+    )
 }
+
 
 export default Routes;

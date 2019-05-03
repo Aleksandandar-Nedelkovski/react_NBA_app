@@ -1,17 +1,17 @@
-.logContainer {
-    width: 80%;
+.postContainer {
+    width: 90%;
     margin: 0 auto;
     height: 100vh;
     padding-top: 50px;
 }
 
-.logContainer h2 {
+.postContainer h2 {
     font-weight: 300;
     text-align: center;
     font-size: 35px;
 }
 
-.logContainer input{
+.postContainer input {
     font-size: 17px;
     width: 100%;
     margin-top: 10px;
@@ -20,14 +20,10 @@
     font-weight: 300;
 }
 
-.logContainer button {
+.postContainer button {
     background: #03a9f4;
     font-size: 13px;
     padding: 10px;
     color: #fff;
     margin-top: 10px;
-}
-
-.error {
-    color: red;
 }

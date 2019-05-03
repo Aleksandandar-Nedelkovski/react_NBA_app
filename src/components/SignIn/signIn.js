@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './signIn.css';
+import { firebase } from '../../firebase';
 
 import FormField from '../Widgets/FormFields/formFields';
 
@@ -58,7 +59,6 @@ class SignIn extends Component {
         }
         newElement.touched = element.blur;
         newFormdata[element.id] = newElement;
-        // console.log(newFormdata);
         this.setState({
             formdata: newFormdata
         })
@@ -86,7 +86,6 @@ class SignIn extends Component {
     }
 
     submitButton = () => (
-
         this.state.loading ?
             'loading...'
             :
@@ -114,13 +113,39 @@ class SignIn extends Component {
                     registerError: ''
                 })
                 if (type) {
-                    console.log('log in');
+                    firebase.auth().signInWithEmailAndPassword(
+                        dataToSubmit.email,
+                        dataToSubmit.password
+                    ).then(() => {
+                        this.props.history.push('/')
+                    }).catch(error => {
+                        this.setState({
+                            loading: false,
+                            registerError: error.message
+                        })
+                    })
                 } else {
-                    console.log('register');
+                    firebase.auth().createUserWithEmailAndPassword(
+                        dataToSubmit.email,
+                        dataToSubmit.password
+                    ).then(() => {
+                        this.props.history.push('/')
+                    }).catch(error => {
+                        this.setState({
+                            loading: false,
+                            registerError: error.message
+                        })
+                    })
                 }
             }
         }
     }
+
+    showError = () => (
+        this.state.registerError !== '' ?
+            <div className={styles.error}>{this.state.registerError}</div>
+            : ''
+    )
 
     render() {
         return (
@@ -141,6 +166,7 @@ class SignIn extends Component {
                         change={(element) => this.updateForm(element)}
                     />
                     {this.submitButton()}
+                    {this.showError()}
                 </form>
             </div>
         )
