@@ -1,3 +1,3 @@
-React NBA app
+#React NBA app
 
-https://fathomless-inlet-98354.herokuapp.com/
+https://react-nba-app.herokuapp.com/
