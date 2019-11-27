@@ -15,7 +15,7 @@ const Home = () => {
                     dots: false
                 }}
             />
-            <NewsList 
+            <NewsList
                 type="card"
                 loadmore={true}
                 start={0}
