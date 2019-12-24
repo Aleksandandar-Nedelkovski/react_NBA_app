@@ -3,8 +3,8 @@ import styles from './dashboard.css';
 import FormFields from '../Widgets/FormFields/formFields';
 
 import { Editor } from 'react-draft-wysiwyg';
-import { EditorState, convertFromRaw, convertToRaw } from 'draft-js';
-import { stateToHTML } from 'draft-js-export-html';
+import { EditorState } from 'draft-js';
+// import { stateToHTML } from 'draft-js-export-html';
 
 
 class Dashboard extends Component {
@@ -117,9 +117,9 @@ class Dashboard extends Component {
     )
 
     onEditorStateChange = (editorState) => {
-        let contentState = editorState.getCurrentContent();
-        let rawState = convertToRaw(contentState);
-        let html = stateToHTML(contentState);
+        // let contentState = editorState.getCurrentContent();
+        // let rawState = convertToRaw(contentState);
+        // let html = stateToHTML(contentState);
         this.setState({
             editorState
         })
